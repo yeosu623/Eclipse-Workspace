@@ -62,7 +62,7 @@ public class Coffee extends JFrame {
 			g.fillRect(410, 10, 70, 200);
 			
 			// 원재료 이름 그리기
-			ImageIcon labelIcon = new ImageIcon("C:\\Users\\yeosu\\eclipse-workspace\\univ_study\\src\\image\\labelImg.png");
+			ImageIcon labelIcon = new ImageIcon("images/labelImg.png");
 			Image labelImg = labelIcon.getImage();
 			g.drawImage(labelImg, 0, 220, 500, 50, this);
 			
@@ -75,7 +75,7 @@ public class Coffee extends JFrame {
 			g.fillRect(410, 10, 70, 40 * (5 - cream));
 			
 			// 커피컵 이미지 그리기
-			ImageIcon cupIcon = new ImageIcon("C:\\Users\\yeosu\\eclipse-workspace\\univ_study\\src\\image\\cupImg.jpg");
+			ImageIcon cupIcon = new ImageIcon("images/cupImg.jpg");
 			Image cupImg = cupIcon.getImage();
 			g.drawImage(cupImg, 180, 280, 120, 120, this);
 		}
