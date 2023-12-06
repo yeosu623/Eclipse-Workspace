@@ -1,34 +1,39 @@
-import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
+import java.awt.*;
+import javax.swing.*;
 
 public class Problem1 extends JFrame {
-	private JComboBox<String> cb = new JComboBox<String>();
+	
+	JButton button;
 	
 	public Problem1() {
-		setTitle("JTextField and JComboBox Practice");
+		super("Problem1");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		Container c = getContentPane();
 		c.setLayout(new FlowLayout());
 		
-		JTextField jt = new JTextField(12);
+		button = new JButton("New Button");
+		button.setBackground(new Color(get0To255() ,get0To255() ,get0To255()));
+		button.addActionListener(new ButtonActionListener());
+		c.add(button);
 		
-		c.add(jt);
-		jt.addActionListener(new MyActionListener());
-		c.add(cb);
-		
-		setSize(300,300);
+		setSize(300, 150);
 		setVisible(true);
 	}
 	
-	class MyActionListener implements ActionListener{
+	class ButtonActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			JTextField t = (JTextField)e.getSource();
-			cb.addItem(t.getText());
+			button.setBackground(new Color(get0To255() ,get0To255() ,get0To255()));
 		}
 	}
 	
+	int get0To255() {
+		return (int)(Math.random() * 255);
+	}
+
 	public static void main(String[] args) {
 		new Problem1();
 	}
+
 }
